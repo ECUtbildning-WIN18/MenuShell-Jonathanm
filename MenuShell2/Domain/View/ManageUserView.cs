@@ -16,6 +16,7 @@ namespace MenuShell2.Domain.View
         {
             bool isOff = false;
             var addUser = new AddUserView(_users);
+            var deleteUser = new DeleteUserView(_users);
 
             do
             {
@@ -32,7 +33,11 @@ namespace MenuShell2.Domain.View
                 }
                 else if (keyInfo.Key == ConsoleKey.D2)
                 {
-
+                    deleteUser.Display();
+                }
+                else if (keyInfo.Key == ConsoleKey.D3)
+                {
+                    isOff = true;
                 }
                 else
                 {
@@ -40,7 +45,7 @@ namespace MenuShell2.Domain.View
                 }
 
 
-            } while (isOff);
+            } while (!isOff);
         }
     }
 }

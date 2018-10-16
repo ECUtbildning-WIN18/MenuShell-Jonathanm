@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MenuShell2.Domain.View
 {
-    class DeleteUserView
+    class DeleteUserView : BaseView
     {
         private readonly IDictionary<string, User> _users;
 
-        public DeleteUserView(IDictionary<string, User> users)
+        public DeleteUserView(IDictionary<string, User> users) : base("Deleting user")
         {
             _users = users;
         }
@@ -30,7 +27,7 @@ namespace MenuShell2.Domain.View
                     Console.WriteLine(user.Value.Username);
                 }
 
-                Console.WriteLine("\nChoose a user to delete");
+                Console.WriteLine("\nChoose a user to delete or press any key to cancel");
                 var deleteUser = Console.ReadLine();
 
                 if (_users.ContainsKey(deleteUser))

@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace MenuShell2.Domain.Services
+﻿namespace MenuShell2.Domain.Services
 {
     class AuthenticationService : IAuthenticationService
     {

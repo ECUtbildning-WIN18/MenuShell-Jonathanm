@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MenuShell2.Domain.View
 {
@@ -18,7 +15,7 @@ namespace MenuShell2.Domain.View
         public string Display()
         {
             bool addedNewUser = false;
-
+            var administratorMainView = new AdministratorMainView(_users);
             do
             {
                 Console.Clear();
@@ -45,6 +42,7 @@ namespace MenuShell2.Domain.View
                     _users.Add(user.Username, user);
 
                     addedNewUser = true;
+                    administratorMainView.Display();
                 }
                 else if (keyInfo.Key == ConsoleKey.N)
                 {
@@ -54,7 +52,7 @@ namespace MenuShell2.Domain.View
                 {
                     Console.WriteLine("Invalid input!");
                 }
-            } while (!addedNewUser);
+            } while (addedNewUser);
 
             return "";
         }
